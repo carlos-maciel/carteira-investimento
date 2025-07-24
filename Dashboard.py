@@ -35,7 +35,7 @@ with tab1:
     st.plotly_chart(fig, use_container_width=True)
 
 with tab2:
-    st.subheader("Renda Fixa")
+    st.subheader("Renda Fixa Dinâmica")
     fig = px.line(df_renda_fixa)
     st.plotly_chart(fig, use_container_width=True)
 
