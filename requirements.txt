@@ -1,0 +1,4 @@
+yfinance==0.2.65
+streamlit==1.47.0
+plotly==6.2.0
+matplotlib==3.10.3
