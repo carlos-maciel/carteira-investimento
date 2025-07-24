@@ -27,34 +27,58 @@ df_internacional = yf.download(internacional, data_inicial, data_final)['Close']
 df_cripto = yf.download(cripto, data_inicial, data_final)['Close']
 df_ibovespa = yf.download(ibovespa, data_inicial, data_final)['Close']
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Ibovespa", "Renda Fixa", "FII", "Ações", "Internacional", "Cripto"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Ibovespa", "Renda Fixa Dinâmica", "FII", "Ações", "Internacional", "Criptomoedas"])
 
 with tab1:
     st.subheader("Ibovespa")
-    fig = px.line(df_ibovespa)
+    fig = px.line(
+        df_ibovespa,
+        labels={"index": "Data", "value": "Preço"},
+        title="Ibovespa"
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 with tab2:
     st.subheader("Renda Fixa Dinâmica")
-    fig = px.line(df_renda_fixa)
+    fig = px.line(
+        df_renda_fixa,
+        labels={"index": "Data", "value": "Preço"},
+        title="Renda Fixa Dinâmica"
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 with tab3:
     st.subheader("FII")
-    fig = px.line(df_fii)
+    fig = px.line(
+        df_fii,
+        labels={"index": "Data", "value": "Preço"},
+        title="FII"
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 with tab4:
     st.subheader("Ações")
-    fig = px.line(df_acoes)
+    fig = px.line(
+        df_acoes,
+        labels={"index": "Data", "value": "Preço"},
+        title="Ações"
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 with tab5:
     st.subheader("Internacional")
-    fig = px.line(df_internacional)
+    fig = px.line(
+        df_internacional,
+        labels={"index": "Data", "value": "Preço"},
+        title="Internacional"
+    )
     st.plotly_chart(fig, use_container_width=True)
 
 with tab6:
-    st.subheader("Cripto")
-    fig = px.line(df_cripto)
+    st.subheader("Criptomoedas")
+    fig = px.line(
+        df_cripto,
+        labels={"index": "Data", "value": "Preço"},
+        title="Criptomoedas"
+    )
     st.plotly_chart(fig, use_container_width=True)
